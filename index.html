@@ -4,23 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .background{
+            background-color: rgb(36, 34, 34);
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page{
+            height: 500px;
+            width: 500px;
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .heading h1{
+            margin-top: 30px;
+            margin-bottom: 100px;
+        }
+        .subhead{
+            text-align: center;
+            margin: 10px 0px;
+            line-height: 20px;
+        }
+        .subhead p{
+            font-size: 13px;
+        }
+        .content{
+            margin: 10px;
+        }
+        .content ul li{
+            font-size: 15px;
+            margin: 5px;
+        }
+        .page-input{
+            margin: 10px;
+        }
+        .input-section1{
+            margin: 5px;
+        }
+        .input-section2{
+            margin: 5px;
+        }
+        .input-section1 input{
+            width: 450px;
+            height: 30px;
+            border-radius: 7px;
+            border: 1px solid black;
+            background-color: rgb(84, 73, 73);     
+            color: white;  
+        }
+        .input-section2 input{
+            width: 219px;
+            height: 30px;
+            border-radius: 7px;
+            border: none;
+            background-color: rgb(84, 73, 73);
+            color: white;
+        }
+        .button{
+            font-size: 17px;
+            padding: 5px 20px;
+            border-radius: 30px;
+            border: none;
+            margin-left: 380px;
+            background-color: rgb(20, 82, 20);
+            color: white;
+        }
+ 
+    </style>
 </head>
 <body>
+    <div class="background">
+
+        <div class="page" id="signUp">
+            <div class="heading">
+                <h1>Sign Up</h1>
+            </div>
+            <div class="subhead">
+                <h3>User Name</h3>
+                <p>Username is your online identity</p>
+            </div>
+            <div class="content">
+                <ul>
+                    <li>Your username should only contain letters, numbers,<br>
+                        underscores or hyphens.</li>
+                    <li>No spaces or special characters allowed.</li>
+                    <li>Your username should not be offensive or contain profanity.</li>
+                </ul>
+            </div>
+            
+            <div class="page-input">
+                <div class="input-section1">
+                    <input type="text" placeholder="Username">
+                </div>
+                <div class="input-section2">
+                    <input type="text" style="margin-right: 10px;" placeholder="First Name">
+                    <input type="text" placeholder="Last Name">
+                </div>
+            </div>
+
+            <button class="button" onclick="email()">Next</button>
+
+        </div>
+
+    </div>
+
     <script>
-        let a=[1,2,3];
-        let b=[3,2,1];
-        let alice=0;
-        let bob=0;
+        var layout=document.getElementById('signUp');
+        function email(){
+            layout.innerHTML=
+            `<div class="page" id="signUp" style="margin:0px">
+            <div class="heading">
+                <h1>Sign Up</h1>
+            </div>
+            <div class="subhead">
+                <h3>User Name</h3>
+                <p>Username is your online identity</p>
+            </div>
+            <div class="content">
+                <ul>
+                    <li>Your username should only contain letters, numbers,<br>
+                        underscores or hyphens.</li>
+                    <li>No spaces or special characters allowed.</li>
+                    <li>Your username should not be offensive or contain profanity.</li>
+                </ul>
+            </div>
+            
+            <div class="page-input">
+                <div class="input-section1">
+                    <input type="text" placeholder="Email">
+                </div>
+            </div>
 
-        for(i=0;i<=3;i++){
-            if(a[i]>b[i]){
-                alice++;
-            }else if(a[i]<b[i]){
-                bob++;
-            }
+            <button class="button">Next</button>`
         }
-
-        console.log([alice,bob])
     </script>
 </body>
 </html>
